@@ -17,8 +17,8 @@ Node.js(Express)+Dockerでの構成プロジェクト。
 
 停止させたいとき
 
-      make stop     // 停止させるとき。
-      make down　　　// 停止させてコンテナ、ネットワークを削除。
+      make stop   // コンテナを停止。
+      make down   // コンテナを停止させて、そのコンテナとネットワークを削除。
 
 <br>
 
