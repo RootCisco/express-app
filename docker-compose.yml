@@ -1,0 +1,13 @@
+version: '3'
+services:
+  express-app:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    image: n-app
+    container_name: n-app
+    ports:
+      - 4000:3000
+    volumes:
+      - ./myapp:/src
+    command: [sh, -c, npm install && npm start]
