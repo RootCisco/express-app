@@ -2,12 +2,12 @@ version: '3'
 services:
   express-app:
     build:
-      context: ./docker
+      context: ./
       dockerfile: Dockerfile
     image: n-app
     container_name: n-app
+    tty: true
     ports:
       - 4000:3000
     volumes:
-      - ./myapp:/src
-    command: [sh, -c, npm install && npm start]
+      - ./app:/home/app/src

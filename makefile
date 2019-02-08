@@ -1,6 +1,17 @@
+# --- heroku deploy --- #
+.PHONY: deploy_heroku
+deploy_heroku:
+		heroku container:push web && \
+    heroku container:release web
+
+# --- docker-compose command --- #
 .PHONY: start
 start:
-		docker-compose up -d --build
+		docker-compose up --build
+
+.PHONY: start_bg
+start_bg:
+		docker-compose up -d --bild
 
 .PHONY: up
 up:
@@ -32,9 +43,9 @@ logs:
 kill:
 		docker-compose kill
 
-# Dockerのコンテナ環境をきれいに消す
-.PHONY: clean
-clean:
-		docker stop $(docker ps -q) && \
-		docker rm $(docker ps -aq) && \
-		docker rmi $(docker images -q)
+# Dockerのコンテナ環境をきれいに消す（必要ならコメントアウト解除して使う）
+# .PHONY: clean
+# clean:
+# 		docker stop $(docker ps -q) && \
+# 		docker rm $(docker ps -aq) && \
+# 		docker rmi $(docker images -q)
