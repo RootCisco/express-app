@@ -43,7 +43,7 @@ logs:
 kill:
 		docker-compose kill
 
-# Dockerのコンテナ環境をきれいに消す（必要ならコメントアウト解除して使う）
+# Dockerの全てのコンテナ環境を消す（必要ならコメントアウト解除して使う）
 # .PHONY: clean
 # clean:
 # 		docker stop $(docker ps -q) && \
